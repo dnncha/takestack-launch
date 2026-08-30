@@ -29,6 +29,15 @@ await walk(root);
 const knownFiles = new Set(await Promise.all(htmlFiles.map(async file => resolve(file))));
 for (const extra of ["styles.css", "favicon.svg", "assets/takestack-hero-product.png"]) knownFiles.add(resolve(root, extra));
 
+const heroPath = resolve(root, "assets/takestack-hero-product.png");
+const hero = await readFile(heroPath);
+const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+if (!hero.subarray(0, pngSignature.length).equals(pngSignature)) {
+  failures.push("assets/takestack-hero-product.png: invalid PNG signature");
+} else if (hero.length < 24 || hero.readUInt32BE(16) === 0 || hero.readUInt32BE(20) === 0) {
+  failures.push("assets/takestack-hero-product.png: missing PNG dimensions");
+}
+
 for (const file of htmlFiles) {
   const source = await readFile(file, "utf8");
   const label = relative(root, file);
