@@ -1639,3 +1639,8 @@ h1 {
 @media (max-width:480px){
   .site-nav a:not(.nav-action){display:none}.site-nav{justify-content:flex-start}.hero-loop,.app-cards{grid-template-columns:1fr}
 }
+
+.retired-page{display:grid;min-height:100vh;place-content:center;max-width:760px;margin:0 auto;padding:48px 22px;background:var(--paper)}
+.retired-page h1{margin-bottom:18px;color:var(--ink);font-size:clamp(42px,7vw,76px);line-height:1}
+.retired-page>p:not(.section-kicker){margin-bottom:30px;color:var(--muted);font-size:19px}
+.retired-page .button{justify-self:start}
