@@ -36,3 +36,11 @@ Automated source validation is implemented in `script/check_public_site.py`. The
 ## Release boundary
 
 These are local source and browser-rendering results. They do not prove deployment, production routing, inbox delivery, App Store availability, an installed app, or physical-device behaviour. Production HTTP, redirects, canonicals, assets, and support mail delivery remain post-deployment checks.
+
+Read-only production check on 1 September 2026, before any deployment of this candidate:
+
+- `https://cheerfulduck.com/takestack/` resolves to `https://cheerfulduck.com/takestack` and returns 404.
+- `https://cheerfulduck.com/takestack/support` returns 404.
+- `https://cheerfulduck.com/takestack/privacy` returns 200 but still contains the retired public terms “Mac”, “Studio”, and “Stripe”.
+
+Therefore this branch has source and local rendering proof only. An authorised deployment and a repeat of the production checks are required before claiming the preferred URLs are live.
