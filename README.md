@@ -4,9 +4,9 @@ Static public site for the standalone TakeStack iPhone app.
 
 Production routes:
 
-- `https://cheerfulduck.com/takestack/`
-- `https://cheerfulduck.com/takestack/support`
-- `https://cheerfulduck.com/takestack/privacy`
+- `https://dnncha.github.io/takestack-launch/`
+- `https://dnncha.github.io/takestack-launch/support`
+- `https://dnncha.github.io/takestack-launch/privacy`
 
 The site intentionally has no purchase CTA while the App Store destination is unverified. Retired desktop purchase, download, campaign, and service pages remain available in Git history only and are not part of the publishable tree.
 

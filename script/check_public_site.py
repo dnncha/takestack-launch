@@ -6,7 +6,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_PAGES = {"index.html":"https://cheerfulduck.com/takestack/","support/index.html":"https://cheerfulduck.com/takestack/support","privacy/index.html":"https://cheerfulduck.com/takestack/privacy"}
+PUBLIC_PAGES = {"index.html":"https://dnncha.github.io/takestack-launch/","support/index.html":"https://dnncha.github.io/takestack-launch/support","privacy/index.html":"https://dnncha.github.io/takestack-launch/privacy"}
 FORBIDDEN = re.compile(r"\b(mac|macos|studio|companion|pairing|founder|stripe|desktop|beta)\b", re.I)
 STALE_ROUTES = ("buy","download","founder-download","after-purchase","concierge","done-for-you","launch-sprint","team-pack","teachers","choir","creators","creator-seed","demo")
 
@@ -28,8 +28,8 @@ class PageParser(HTMLParser):
 def local_target(link):
     clean=link.split("#",1)[0].split("?",1)[0]
     if not clean or clean.startswith(("http://","https://","mailto:","tel:")): return None
-    if clean.startswith("/takestack/"): clean=clean.removeprefix("/takestack/")
-    elif clean == "/takestack": clean=""
+    if clean.startswith("/takestack-launch/"): clean=clean.removeprefix("/takestack-launch/")
+    elif clean == "/takestack-launch": clean=""
     else: return None
     target=ROOT/clean
     if clean.endswith("/") or target.is_dir() or not target.suffix: target=target/"index.html"
